@@ -32,7 +32,7 @@ CREATE TABLE apetit (
     esmorzar_acabat         INT                 NOT NULL,
     dinar_acabat            INT                 NOT NULL,
     sopar_acabat            INT                 NOT NULL,
-    data                    DATE                NOT NULL,
+    data                    DATE                NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     usuari                  INT                 NOT NULL,
     CONSTRAINT FK_APETIT_USUARI FOREIGN KEY (usuari)
     REFERENCES usuari (id)
@@ -45,7 +45,7 @@ CREATE TABLE canvis_bucals (
     id                      SERIAL          PRIMARY KEY,
     afirmatiu               BOOLEAN         NOT NULL,
     simptomes               VARCHAR         NOT NULL,
-    data                    DATE            NOT NULL,
+    data                    DATE            NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     usuari                  INT             NOT NULL,
     CONSTRAINT FK_CANVIS_BUCALS_USER_ID  FOREIGN KEY (usuari)
     REFERENCES usuari(id)
@@ -60,7 +60,7 @@ CREATE TABLE diarrees (
     vegades             INT             NOT NULL,
     escala_bristol      INT             NOT NULL,
     color               VARCHAR         NOT NULL,
-    data                DATE            NOT NULL,
+    data                DATE            DEFAULT CURRENT_TIMESTAMP ,
     usuari              INT             NOT NULL,
     CONSTRAINT FK_DIARRES_USUARI_ID FOREIGN KEY (usuari)
     REFERENCES usuari (id)
@@ -76,7 +76,7 @@ CREATE TABLE DOLOR (
     fatiga          INT             NOT NULL,
     descripcio      VARCHAR         NOT NULL,
     aparicio        VARCHAR         NOT NULL,
-    data            DATE            NOT NULL,
+    data            DATE            DEFAULT CURRENT_TIMESTAMP ,
     usuari          INT             NOT NULL,
     CONSTRAINT FK_DOLOR_USUARI_ID     FOREIGN KEY(usuari)
     REFERENCES usuari(id)
@@ -90,7 +90,7 @@ CREATE TABLE FATIGA (
     id              SERIAL      PRIMARY KEY,
     afirmatiu       BOOLEAN     NOT NULL,
     puntuacio       INT         NOT NULL,
-    data            DATE        NOT NULL,
+    data            DATE        DEFAULT CURRENT_TIMESTAMP ,
     usuari          INT         NOT NULL,
     CONSTRAINT FK_FATIGA_USUARI_ID  FOREIGN KEY(usuari)
     REFERENCES usuari(id)
@@ -99,19 +99,19 @@ CREATE TABLE FATIGA (
 /* REESTRENYIMENT */
 DROP TABLE IF EXISTS reestrenyiment;
 
+DROP TABLE IF EXISTS nutricio;
+
+/* NUTRICIO */
 CREATE TABLE REESTRENYIMENT (
     id                      SERIAL      PRIMARY KEY,
     ultim_cop_ventre        VARCHAR     NOT NULL,
     color_ultima_femta      VARCHAR     NOT NULL,
     escala_bristol          INT         NOT NULL,
-    data                    DATE        NOT NULL,
+    data                    DATE        DEFAULT CURRENT_TIMESTAMP ,
     usuari                  INT         NOT NULL,
     CONSTRAINT FK_REESTRENYIMENT_USUARI_ID FOREIGN KEY (usuari)
     REFERENCES USUARI (id)
 );
-
-/* NUTRICIO */
-DROP TABLE IF EXISTS nutricio;
 
 CREATE TABLE nutricio (
     id              SERIAL      PRIMARY KEY,
@@ -121,7 +121,7 @@ CREATE TABLE nutricio (
     berenar         INT         NOT NULL,
     sopar           INT         NOT NULL,
     gots_aigua      INT         NOT NULL,
-    data            DATE        NOT NULL,
+    data            DATE        DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT FK_NUTRICIO_USUARI   FOREIGN KEY (usuari)
     REFERENCES usuari (id)
 );
@@ -136,7 +136,7 @@ CREATE TABLE medicacio (
     nom             VARCHAR         NOT NULL,
     forma           INT             NOT NULL,
     franja          INT             NOT NULL,
-    data            VARCHAR         NOT NULL,
+    data            VARCHAR         DEFAULT CURRENT_TIMESTAMP ,
     CONSTRAINT FK_MEDICACIO_USUARI FOREIGN KEY (usuari)
     REFERENCES USUARI (id)
 );
@@ -148,7 +148,7 @@ CREATE TABLE nota (
     id                  SERIAL      PRIMARY KEY,
     usuari              INT         NOT NULL,
     descripcio          VARCHAR     NOT NULL,
-    data                DATE        NOT NULL,
+    data                DATE        DEFAULT CURRENT_TIMESTAMP ,
     CONSTRAINT FK_EVENT_USER   FOREIGN KEY (usuari)
     REFERENCES usuari(id)
 );
