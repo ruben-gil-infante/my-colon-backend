@@ -30,7 +30,7 @@ CREATE TABLE canvis_bucals (
     id                      SERIAL          PRIMARY KEY,
     afirmatiu               BOOLEAN         NOT NULL,
     simptomes               VARCHAR         NOT NULL,
-    data                    DATE            NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+    data                    DATE            DEFAULT CURRENT_TIMESTAMP ,
     usuari                  INT             NOT NULL,
     CONSTRAINT FK_CANVIS_BUCALS_USER_ID  FOREIGN KEY (usuari)
     REFERENCES usuari(id)
