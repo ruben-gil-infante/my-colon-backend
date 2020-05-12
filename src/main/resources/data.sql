@@ -23,21 +23,6 @@ INSERT INTO usuari (id, nom, primer_cognom, segon_cognom, correu_electronic, pas
 );
 
 
-/* TAULA APETIT */
-DROP TABLE IF EXISTS apetit;
-
-CREATE TABLE apetit (
-    id                      SERIAL              PRIMARY KEY,
-    afirmatiu               BOOLEAN             NOT NULL,
-    esmorzar_acabat         INT                 NOT NULL,
-    dinar_acabat            INT                 NOT NULL,
-    sopar_acabat            INT                 NOT NULL,
-    data                    DATE                NOT NULL DEFAULT CURRENT_TIMESTAMP ,
-    usuari                  INT                 NOT NULL,
-    CONSTRAINT FK_APETIT_USUARI FOREIGN KEY (usuari)
-    REFERENCES usuari (id)
-);
-
 /* CANVIS BUCALS */
 DROP TABLE IF EXISTS canvis_bucals;
 
