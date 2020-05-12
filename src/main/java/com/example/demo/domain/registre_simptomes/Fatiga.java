@@ -31,7 +31,7 @@ public class Fatiga {
         this.afirmatiu = afirmatiu;
     }
 
-    @Column(name = "puntuaucio")
+    @Column(name = "puntuacio")
     public int getPuntuacio() {
         return puntuacio;
     }
