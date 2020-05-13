@@ -41,7 +41,7 @@ CREATE TABLE diarrees (
 /* DOLOR */
 DROP TABLE IF EXISTS dolor;
 
-CREATE TABLE DOLOR (
+CREATE TABLE dolor (
     id              SERIAL          PRIMARY KEY,
     afirmatiu       BOOLEAN         NOT NULL,
     localitzacio    VARCHAR         NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE DOLOR (
 /* FATIGA */
 DROP TABLE IF EXISTS fatiga;
 
-CREATE TABLE FATIGA (
+CREATE TABLE fatiga (
     id              SERIAL      PRIMARY KEY,
     afirmatiu       BOOLEAN     NOT NULL,
     puntuacio       INT         NOT NULL,
@@ -74,7 +74,7 @@ DROP TABLE IF EXISTS reestrenyiment;
 DROP TABLE IF EXISTS nutricio;
 
 /* NUTRICIO */
-CREATE TABLE REESTRENYIMENT (
+CREATE TABLE reestrenyiment (
     id                      SERIAL      PRIMARY KEY,
     ultim_cop_ventre        VARCHAR     NOT NULL,
     color_ultima_femta      VARCHAR     NOT NULL,
@@ -125,10 +125,25 @@ CREATE TABLE nota (
     REFERENCES usuari(id)
 );
 
+/* VOMITS */
+DROP TABLE IF EXISTS VOMITS;
+
+CREATE TABLE vomits (
+    id              SERIAL          PRIMARY KEY,
+    usuari          INT             NOT NULL,
+    afirmatiu       BOOLEAN         NOT NULL,
+    cops            INT             NOT NULL,
+    descripcio      VARCHAR         NOT NULL,
+    avui            BOOLEAN         NOT NULL,
+    constraint FK_VOMITS_USUARI foreign key (usuari)
+    references usuari(id)
+);
+
+
 /* EVENT COMUNITAT */
 DROP TABLE IF EXISTS EVENT_COMUNITAT;
 
-CREATE TABLE EVENT_COMUNITAT (
+CREATE TABLE event_comunitat (
     id                      SERIAL      PRIMARY KEY,
     data                    DATE        NOT NULL,
     numero_telefon          VARCHAR     NOT NULL,
