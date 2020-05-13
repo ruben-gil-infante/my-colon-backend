@@ -10,19 +10,6 @@ CREATE TABLE usuari(
     password                VARCHAR         NOT NULL
 );
 
-INSERT INTO usuari (id, nom, primer_cognom, segon_cognom, correu_electronic, password) VALUES (
-    1, 'Ruben', 'Gil', 'Infante', 'ruben', 'ruben'
-);
-
-INSERT INTO usuari (id, nom, primer_cognom, segon_cognom, correu_electronic, password) VALUES (
-    2, 'b', 'b', 'b', 'b', 'b'
-);
-
-INSERT INTO usuari (id, nom, primer_cognom, segon_cognom, correu_electronic, password) VALUES (
-    3, 'a', 'a', 'a', 'a', 'a'
-);
-
-
 /* CANVIS BUCALS */
 DROP TABLE IF EXISTS canvis_bucals;
 
