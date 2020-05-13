@@ -3,10 +3,6 @@ package com.example.demo.restcontrollers.usuari;
 import com.example.demo.domain.usuaris.Usuari;
 import com.example.demo.repositories.UsuariRepositori;
 import com.example.demo.utils.Utils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -30,6 +26,8 @@ public class UsuariRestController {
         if(usuari == null){
             throw new IllegalArgumentException("El correu introduït no existeix...", null);
         }
+
+        password = this.utils.MD5Encriptation(password);
 
         if(!usuari.getPassword().equals(password)){
             throw new IllegalArgumentException("Password inocrrecte...", null);
