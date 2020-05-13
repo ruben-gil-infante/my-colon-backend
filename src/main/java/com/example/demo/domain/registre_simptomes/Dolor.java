@@ -8,7 +8,7 @@ public class Dolor {
     private int id;
     private boolean afirmatiu;
     private String localitzacio;
-    private int fatiga;
+    private int valor;
     private String descripcioDolor;
     private String quanApareixDolor;
     private Date data;
@@ -43,13 +43,13 @@ public class Dolor {
         this.localitzacio = localitzacio;
     }
 
-    @Column(name = "fatiga")
-    public int getFatiga() {
-        return fatiga;
+    @Column(name = "valor")
+    public int getValor() {
+        return valor;
     }
 
-    public void setFatiga(int fatiga) {
-        this.fatiga = fatiga;
+    public void setValor(int fatiga) {
+        this.valor = fatiga;
     }
 
     @Column(name = "descripcio")

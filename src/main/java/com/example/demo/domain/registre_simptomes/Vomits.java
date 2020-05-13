@@ -1,6 +1,7 @@
 package com.example.demo.domain.registre_simptomes;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "vomits")
 public class Vomits {
@@ -11,6 +12,7 @@ public class Vomits {
     private int cops;
     private String descripcio;
     private boolean avui;
+    private Date data;
 
     public Vomits(){}
 
@@ -69,5 +71,10 @@ public class Vomits {
     public void setAvui(boolean avui) {
         this.avui = avui;
     }
+
+    @Column(name = "data")
+    public Date getData(){return this.data;}
+
+    public void setData(Date data){this.data = data;}
 
 }

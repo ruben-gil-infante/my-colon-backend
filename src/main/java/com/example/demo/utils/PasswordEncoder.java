@@ -4,9 +4,9 @@ import net.bytebuddy.pool.TypePool;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Utils {
+public class PasswordEncoder {
 
-    public Utils (){
+    public PasswordEncoder(){
 
     }
 

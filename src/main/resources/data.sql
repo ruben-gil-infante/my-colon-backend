@@ -45,7 +45,7 @@ CREATE TABLE dolor (
     id              SERIAL          PRIMARY KEY,
     afirmatiu       BOOLEAN         NOT NULL,
     localitzacio    VARCHAR         NOT NULL,
-    fatiga          INT             NOT NULL,
+    valor           INT             NOT NULL,
     descripcio      VARCHAR         NOT NULL,
     aparicio        VARCHAR         NOT NULL,
     data            DATE            DEFAULT CURRENT_TIMESTAMP ,
@@ -84,6 +84,9 @@ CREATE TABLE reestrenyiment (
     CONSTRAINT FK_REESTRENYIMENT_USUARI_ID FOREIGN KEY (usuari)
     REFERENCES USUARI (id)
 );
+
+/* NUTRICIO */
+DROP TABLE IF EXISTS nutricio;
 
 CREATE TABLE nutricio (
     id              SERIAL      PRIMARY KEY,
@@ -126,7 +129,7 @@ CREATE TABLE nota (
 );
 
 /* VOMITS */
-DROP TABLE IF EXISTS VOMITS;
+DROP TABLE IF EXISTS vomits;
 
 CREATE TABLE vomits (
     id              SERIAL          PRIMARY KEY,
@@ -135,6 +138,7 @@ CREATE TABLE vomits (
     cops            INT             NOT NULL,
     descripcio      VARCHAR         NOT NULL,
     avui            BOOLEAN         NOT NULL,
+    data            DATE            DEFAULT CURRENT_TIMESTAMP,
     constraint FK_VOMITS_USUARI foreign key (usuari)
     references usuari(id)
 );
