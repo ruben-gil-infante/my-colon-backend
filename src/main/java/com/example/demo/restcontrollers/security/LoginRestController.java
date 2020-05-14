@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/login")
@@ -19,8 +21,16 @@ public class LoginRestController {
     }
 
     @GetMapping
-    public Usuari login(Principal principal){
-        return this.usuariRepositori.findByCorreuElectronic(principal.getName());
+    public Map<String, String> login(Principal principal){
+        Usuari usuari = this.usuariRepositori.findByCorreuElectronic(principal.getName());
+        Map<String, String> infoUsuari = new HashMap<>();
+        infoUsuari.put("nom", usuari.getNom());
+        infoUsuari.put("primerCognom", usuari.getPrimerCognom());
+        infoUsuari.put("segonCognom", usuari.getSegonCognom());
+        infoUsuari.put("correuElectronic", usuari.getCorreuElectronic());
+        infoUsuari.put("id", String.valueOf(usuari.getId()));
+
+        return infoUsuari;
     }
 
 }
