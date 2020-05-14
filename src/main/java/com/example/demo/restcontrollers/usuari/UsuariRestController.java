@@ -2,8 +2,13 @@ package com.example.demo.restcontrollers.usuari;
 
 import com.example.demo.domain.usuaris.Usuari;
 import com.example.demo.repositories.UsuariRepositori;
-import com.example.demo.utils.PasswordEncoder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 
 @RestController
@@ -11,12 +16,12 @@ import org.springframework.web.bind.annotation.*;
 public class UsuariRestController {
 
     private UsuariRepositori usuariRepositori;
-    private PasswordEncoder passwordEncoder;
 
+    @Bean
+    PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder(); }
 
-    public UsuariRestController(UsuariRepositori usuariRepositori, PasswordEncoder passwordEncoder){
+    public UsuariRestController(UsuariRepositori usuariRepositori){
         this.usuariRepositori = usuariRepositori;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/{correuElectronic}/{password}")
@@ -27,18 +32,12 @@ public class UsuariRestController {
             throw new IllegalArgumentException("El correu introduït no existeix...", null);
         }
 
-        password = this.passwordEncoder.MD5Encriptation(password);
-
-        if(!usuari.getPassword().equals(password)){
-            throw new IllegalArgumentException("Password inocrrecte...", null);
-        }
-
         return usuari;
     }
 
     @PostMapping
     public void registrarUsuari(@RequestBody Usuari usuari){
-        usuari.setPassword(this.passwordEncoder.MD5Encriptation(usuari.getPassword()));
+        usuari.setPassword(this.passwordEncoder().encode(usuari.getPassword()));
         usuariRepositori.save(usuari);
     }
 

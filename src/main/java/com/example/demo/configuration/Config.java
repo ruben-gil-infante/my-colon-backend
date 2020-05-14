@@ -1,7 +1,12 @@
 package com.example.demo.configuration;
 
+import com.example.demo.service.UserPrincipalDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -9,7 +14,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class Config {
+public class Config extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserPrincipalDetailsService userPrincipalDetailsService;
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -23,5 +31,37 @@ public class Config {
         };
     }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+        http
+                .cors().and()
+                //HTTP Basic authentication
+                .httpBasic()
+                .and()
+                .authorizeRequests()
+                //.antMatchers("/**").authenticated()
+                .antMatchers("/api/login/**").permitAll()
+                .antMatchers("/api/v1/**").hasAuthority("USUARI")
+                .and()
+                .csrf().disable()
+                .formLogin().disable();
+
+        // H2 database
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        daoAuthenticationProvider.setUserDetailsService(userPrincipalDetailsService);
+
+        return daoAuthenticationProvider;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder(); }
 
 }

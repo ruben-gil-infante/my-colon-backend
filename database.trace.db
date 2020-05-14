@@ -586,3 +586,7 @@ insert into dolor (afirmatiu, data, descripcio, fatiga, localitzacio, aparicio, 
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-05-14 17:18:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "MENU_USER" no encontrada
+Table "MENU_USER" not found; SQL statement:
+INSERT INTO MENU_USER (username, password, roles, active, permissions) VALUES('admin','$2a$10$RL8jQ40kg2oBd7pGr3P5neo41ZFic.16UiKZPtayk8H2U6q2lV4m2', 'ADMIN', 1, '') [42102-199]
