@@ -1,6 +1,8 @@
 package com.example.demo.domain.registre_simptomes;
 
 
+import org.springframework.scripting.groovy.GroovyObjectCustomizer;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,9 +13,17 @@ public class Diarrees {
     private boolean afirmatiu;
     private int vegades;
     private int escalaBristol;
-    private String color;
+    private int color;
     private Date data;
     private String usuari;
+
+    // COLORS
+    private static final int MARRO = 1;
+    private static final int GROC = 2;
+    private static final int VERD = 3;
+    private static final int GRIS = 4;
+    private static final int VERMELL = 5;
+    private static final int NEGRE = 6;
 
     public Diarrees () {}
 
@@ -56,11 +66,12 @@ public class Diarrees {
     }
 
     @Column(name = "color")
-    public String getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(int.
+            gcolor) {
         this.color = color;
     }
 

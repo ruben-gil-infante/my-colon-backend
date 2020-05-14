@@ -590,3 +590,73 @@ insert into dolor (afirmatiu, data, descripcio, fatiga, localitzacio, aparicio, 
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "MENU_USER" no encontrada
 Table "MENU_USER" not found; SQL statement:
 INSERT INTO MENU_USER (username, password, roles, active, permissions) VALUES('admin','$2a$10$RL8jQ40kg2oBd7pGr3P5neo41ZFic.16UiKZPtayk8H2U6q2lV4m2', 'ADMIN', 1, '') [42102-199]
+2020-05-14 18:42:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "DIARREES" ya existe
+Table "DIARREES" already exists; SQL statement:
+CREATE TABLE diarrees (
+    id                  SERIAL          PRIMARY KEY,
+    afirmatiu           BOOLEAN         NOT NULL,
+    vegades             INT             NOT NULL,
+    escala_bristol      INT             NOT NULL,
+    color               INT             NOT NULL,
+    data                DATE            DEFAULT CURRENT_TIMESTAMP ,
+    usuari              INT             NOT NULL,
+    CONSTRAINT FK_DIARRES_USUARI_ID FOREIGN KEY (usuari)
+    REFERENCES usuari (id)
+) [42101-199]
+2020-05-14 18:42:38 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "DIARREES" ya existe
+Table "DIARREES" already exists; SQL statement:
+CREATE TABLE diarrees (
+    id                  SERIAL          PRIMARY KEY,
+    afirmatiu           BOOLEAN         NOT NULL,
+    vegades             INT             NOT NULL,
+    escala_bristol      INT             NOT NULL,
+    color               INT             NOT NULL,
+    data                DATE            DEFAULT CURRENT_TIMESTAMP ,
+    usuari              INT             NOT NULL,
+    CONSTRAINT FK_DIARRES_USUARI_ID FOREIGN KEY (usuari)
+    REFERENCES usuari (id)
+) [42101-199]
+2020-05-14 18:42:49 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "DIARREES" ya existe
+Table "DIARREES" already exists; SQL statement:
+CREATE TABLE diarrees (
+    id                  SERIAL          PRIMARY KEY,
+    afirmatiu           BOOLEAN         NOT NULL,
+    vegades             INT             NOT NULL,
+    escala_bristol      INT             NOT NULL,
+    color               INT             NOT NULL,
+    data                DATE            DEFAULT CURRENT_TIMESTAMP ,
+    usuari              INT             NOT NULL,
+    CONSTRAINT FK_DIARRES_USUARI_ID FOREIGN KEY (usuari)
+    REFERENCES usuari (id)
+) [42101-199]
+2020-05-14 18:42:51 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "DIARREES" ya existe
+Table "DIARREES" already exists; SQL statement:
+CREATE TABLE diarrees (
+    id                  SERIAL          PRIMARY KEY,
+    afirmatiu           BOOLEAN         NOT NULL,
+    vegades             INT             NOT NULL,
+    escala_bristol      INT             NOT NULL,
+    color               INT             NOT NULL,
+    data                DATE            DEFAULT CURRENT_TIMESTAMP ,
+    usuari              INT             NOT NULL,
+    CONSTRAINT FK_DIARRES_USUARI_ID FOREIGN KEY (usuari)
+    REFERENCES usuari (id)
+) [42101-199]
+2020-05-14 18:42:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "DIARREES" ya existe
+Table "DIARREES" already exists; SQL statement:
+CREATE TABLE diarrees (
+    id                  SERIAL          PRIMARY KEY,
+    afirmatiu           BOOLEAN         NOT NULL,
+    vegades             INT             NOT NULL,
+    escala_bristol      INT             NOT NULL,
+    color               INT             NOT NULL,
+    data                DATE            DEFAULT CURRENT_TIMESTAMP ,
+    usuari              INT             NOT NULL,
+    CONSTRAINT FK_DIARRES_USUARI_ID FOREIGN KEY (usuari)
+    REFERENCES usuari (id)
+) [42101-199]

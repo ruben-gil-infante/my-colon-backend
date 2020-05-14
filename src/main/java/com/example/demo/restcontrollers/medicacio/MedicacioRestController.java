@@ -2,8 +2,10 @@ package com.example.demo.restcontrollers.medicacio;
 
 import com.example.demo.domain.medicacio.Medicacio;
 import com.example.demo.repositories.MedicacioRepositori;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController

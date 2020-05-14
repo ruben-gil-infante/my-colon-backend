@@ -31,7 +31,7 @@ CREATE TABLE diarrees (
     afirmatiu           BOOLEAN         NOT NULL,
     vegades             INT             NOT NULL,
     escala_bristol      INT             NOT NULL,
-    color               VARCHAR         NOT NULL,
+    color               INT             NOT NULL,
     data                DATE            DEFAULT CURRENT_TIMESTAMP ,
     usuari              INT             NOT NULL,
     CONSTRAINT FK_DIARRES_USUARI_ID FOREIGN KEY (usuari)
