@@ -71,14 +71,11 @@ CREATE TABLE fatiga (
 /* REESTRENYIMENT */
 DROP TABLE IF EXISTS reestrenyiment;
 
-DROP TABLE IF EXISTS nutricio;
-
-/* NUTRICIO */
 CREATE TABLE reestrenyiment (
     id                      SERIAL      PRIMARY KEY,
-    ultim_cop_ventre        VARCHAR     NOT NULL,
-    color_ultima_femta      VARCHAR     NOT NULL,
-    escala_bristol          INT         NOT NULL,
+    ultim_cop               VARCHAR     NOT NULL,
+    color                   INT         NOT NULL,
+    bristol                 INT         NOT NULL,
     data                    DATE        DEFAULT CURRENT_TIMESTAMP ,
     usuari                  INT         NOT NULL,
     CONSTRAINT FK_REESTRENYIMENT_USUARI_ID FOREIGN KEY (usuari)

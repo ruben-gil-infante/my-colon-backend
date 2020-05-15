@@ -8,9 +8,9 @@ public class Reestrenyiment {
 
     private int id;
     private boolean afirmatiu;
-    private String ultimCopVentre;
-    private String colorUltimaFemta;
-    private int escalaBristol;
+    private int ultimCop;
+    private int bristol;
+    private int color;
     private Date data;
     private String usuari;
 
@@ -36,32 +36,20 @@ public class Reestrenyiment {
         this.afirmatiu = afirmatiu;
     }
 
-    @Column(name = "ultim_cop_ventre")
-    public String getUltimCopVentre() {
-        return ultimCopVentre;
-    }
+    @Column(name = "color")
+    public int getColor(){return this.color;}
 
-    public void setUltimCopVentre(String ultimCopVentre) {
-        this.ultimCopVentre = ultimCopVentre;
-    }
+    public void setColor(int color){this.color = color;}
 
-    @Column(name = "color_ultima_femta")
-    public String getColorUltimaFemta() {
-        return colorUltimaFemta;
-    }
+    @Column(name = "ultim_cop")
+    public int getUltimCop(){return this.ultimCop;}
 
-    public void setColorUltimaFemta(String colorUltimaFemta) {
-        this.colorUltimaFemta = colorUltimaFemta;
-    }
+    public void setUltimCop(int ultimCop){this.ultimCop = ultimCop;}
 
-    @Column(name = "escala_bristol")
-    public int getEscalaBristol() {
-        return escalaBristol;
-    }
+    @Column(name = "bristol")
+    public int getBristol(){return this.bristol;}
 
-    public void setEscalaBristol(int escalaBristol) {
-        this.escalaBristol = escalaBristol;
-    }
+    public void setBristol(int bristol){this.bristol = bristol;}
 
     @Column(name = "data")
     public Date getData() {

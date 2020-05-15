@@ -70,8 +70,7 @@ public class Diarrees {
         return color;
     }
 
-    public void setColor(int.
-            gcolor) {
+    public void setColor(int color) {
         this.color = color;
     }
 
