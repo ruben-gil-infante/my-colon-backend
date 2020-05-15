@@ -1,4 +1,4 @@
-package com.example.demo.restcontrollers.comunitat;
+package com.example.demo.controllers.comunitat;
 
 import com.example.demo.domain.comunitat.Esdeveniment;
 import com.example.demo.repositories.EsdevenimentRepositori;

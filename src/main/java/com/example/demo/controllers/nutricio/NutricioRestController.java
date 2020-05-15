@@ -1,4 +1,4 @@
-package com.example.demo.restcontrollers.nutricio;
+package com.example.demo.controllers.nutricio;
 
 import com.example.demo.domain.nutricio.Nutricio;
 import com.example.demo.repositories.NutricioRepositori;

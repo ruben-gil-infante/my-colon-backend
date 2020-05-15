@@ -1,4 +1,4 @@
-package com.example.demo.restcontrollers.security;
+package com.example.demo.controllers.security;
 
 import com.example.demo.domain.usuaris.Usuari;
 import com.example.demo.repositories.UsuariRepositori;

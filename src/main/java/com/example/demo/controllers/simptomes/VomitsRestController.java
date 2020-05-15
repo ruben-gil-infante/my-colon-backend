@@ -1,4 +1,4 @@
-package com.example.demo.restcontrollers.simptomes;
+package com.example.demo.controllers.simptomes;
 
 import com.example.demo.domain.registre_simptomes.Vomits;
 import com.example.demo.repositories.VomitsRepositori;

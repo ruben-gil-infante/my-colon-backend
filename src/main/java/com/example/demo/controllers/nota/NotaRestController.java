@@ -1,4 +1,4 @@
-package com.example.demo.restcontrollers.nota;
+package com.example.demo.controllers.nota;
 
 import com.example.demo.domain.nota.Nota;
 import com.example.demo.repositories.NotaRepositori;

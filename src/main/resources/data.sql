@@ -73,6 +73,7 @@ DROP TABLE IF EXISTS reestrenyiment;
 
 CREATE TABLE reestrenyiment (
     id                      SERIAL      PRIMARY KEY,
+    afirmatiu               BOOLEAN     NOT NULL,
     ultim_cop               VARCHAR     NOT NULL,
     color                   INT         NOT NULL,
     bristol                 INT         NOT NULL,
@@ -142,11 +143,25 @@ CREATE TABLE vomits (
 
 
 /* EVENT COMUNITAT */
-DROP TABLE IF EXISTS EVENT_COMUNITAT;
+DROP TABLE IF EXISTS event_comunitat;
 
 CREATE TABLE event_comunitat (
     id                      SERIAL      PRIMARY KEY,
     data                    DATE        NOT NULL,
     numero_telefon          VARCHAR     NOT NULL,
     descripcio              VARCHAR     NOT NULL
+);
+
+
+/* SIGNE VITAL */
+DROP TABLE IF EXISTS signe_vital;
+
+CREATE TABLE signe_vital(
+    id          SERIAL          PRIMARY KEY,
+    data        DATE            NOT NULL,
+    usuari      INT             NOT NULL,
+    valor       INT             NOT NULL,
+    tipus       INT             NOT NULL,
+    constraint FK_SIGNE_VITAL_USUARI foreign key (usuari)
+    references usuari(id)
 );

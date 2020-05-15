@@ -17,13 +17,7 @@ public class Diarrees {
     private Date data;
     private String usuari;
 
-    // COLORS
-    private static final int MARRO = 1;
-    private static final int GROC = 2;
-    private static final int VERD = 3;
-    private static final int GRIS = 4;
-    private static final int VERMELL = 5;
-    private static final int NEGRE = 6;
+
 
     public Diarrees () {}
 
