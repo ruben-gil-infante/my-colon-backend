@@ -7,6 +7,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/v1/usuari")
@@ -21,6 +23,7 @@ public class UsuariRestController {
         this.usuariRepositori = usuariRepositori;
     }
 
+
     @GetMapping("/{correuElectronic}/{password}")
     public Usuari getUsuariById(@PathVariable String correuElectronic, @PathVariable String password){
         Usuari usuari = usuariRepositori.findByCorreuElectronic(correuElectronic);
@@ -33,7 +36,7 @@ public class UsuariRestController {
     }
 
     @PostMapping
-    public void registrarUsuari(@RequestBody Usuari usuari){
+    public void registrarUsuari(@RequestBody Usuari usuari) {
         usuari.setPassword(this.passwordEncoder().encode(usuari.getPassword()));
         usuariRepositori.save(usuari);
     }

@@ -56,7 +56,7 @@ public class SignesVitals {
         this.valor = valor;
     }
 
-    @Column(name = "tipu")
+    @Column(name = "tipus")
     public int getTipus() {
         return tipus;
     }
