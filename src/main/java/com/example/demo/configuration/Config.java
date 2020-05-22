@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,6 +33,11 @@ public class Config extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/api/v1/registrar");
+    }
+
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http
@@ -40,9 +46,8 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                //.antMatchers("/**").authenticated()
-                .antMatchers("/api/login/**").permitAll()
-                .antMatchers("/api/v1/**").hasAuthority("USUARI")
+                .anyRequest()
+                .authenticated()
                 .and()
                 .csrf().disable()
                 .formLogin().disable();
@@ -50,6 +55,7 @@ public class Config extends WebSecurityConfigurerAdapter {
         // H2 database
         http.csrf().disable();
         http.headers().frameOptions().disable();
+
     }
 
     @Bean

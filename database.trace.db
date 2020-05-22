@@ -958,3 +958,7 @@ insert into signe_vital (data, tipu, usuari, valor, id) values (?, ?, ?, ?, ?) [
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2020-05-22 12:32:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FORM[*] USUARI"
+Syntax error in SQL statement "SELECT * FORM[*] USUARI"; SQL statement:
+SELECT * FORM USUARI [42000-199]

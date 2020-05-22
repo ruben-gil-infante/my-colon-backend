@@ -7,6 +7,8 @@ CREATE TABLE usuari(
     primer_cognom           VARCHAR         NOT NULL,
     segon_cognom            VARCHAR         NOT NULL,
     correu_electronic       VARCHAR         UNIQUE,
+    genere                  INT             NOT NULL,
+    edat                    INT             NOT NULL,
     password                VARCHAR         NOT NULL
 );
 

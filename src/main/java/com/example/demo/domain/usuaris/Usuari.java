@@ -11,6 +11,8 @@ public class Usuari {
     private String primerCognom;
     private String segonCognom;
     private String correuElectronic;
+    private int genere;
+    private int edat;
     private String password;
 
     public Usuari (){}
@@ -68,4 +70,14 @@ public class Usuari {
     public void setPassword(String password){
         this.password = password;
     }
+
+    @Column(name = "genere")
+    public int getGenere(){return this.genere;}
+
+    public void setGenere(int genere){this.genere = genere;}
+
+    @Column(name = "edat")
+    public int getEdat(){return this.edat;}
+
+    public void setEdat(int edat){ this.edat = edat; }
 }
