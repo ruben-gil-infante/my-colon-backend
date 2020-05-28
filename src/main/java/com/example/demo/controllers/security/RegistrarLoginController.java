@@ -21,6 +21,9 @@ public class RegistrarLoginController {
     // FIXME: Mostrar errors correctament quan l'usuari no es pot registrar
     @PostMapping()
     public Usuari prova(@RequestBody Usuari usuari){
+        if(usuariRepositori.findByCorreuElectronic(usuari.getCorreuElectronic()) != null)
+            throw new IllegalArgumentException("Usuari prèviament registrat");
+
         usuari.setPassword(passwordEncoder.encode(usuari.getPassword()));
         return usuariRepositori.save(usuari);
     }
