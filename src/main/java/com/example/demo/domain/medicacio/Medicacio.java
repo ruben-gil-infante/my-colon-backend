@@ -10,8 +10,8 @@ public class Medicacio {
     private String nom;
     private int forma;
     private String dosi;
-    private int franja;
-    private int usuari;
+    private Integer franja;
+    private Integer usuari;
     private Date data;
 
 

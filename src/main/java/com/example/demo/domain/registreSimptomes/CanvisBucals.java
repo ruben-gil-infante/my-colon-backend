@@ -1,4 +1,4 @@
-package com.example.demo.domain.registre_simptomes;
+package com.example.demo.domain.registreSimptomes;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -9,7 +9,7 @@ public class CanvisBucals {
     private int id;
     private boolean afirmatiu;
     private String simptomes;
-    private String usuari;
+    private Integer usuari;
     private Date date;
 
     @Id
@@ -42,11 +42,11 @@ public class CanvisBucals {
     }
 
     @Column(name = "usuari")
-    public String getUsuari() {
+    public int getUsuari() {
         return usuari;
     }
 
-    public void setUsuari(String userId) {
+    public void setUsuari(int userId) {
         this.usuari = userId;
     }
 

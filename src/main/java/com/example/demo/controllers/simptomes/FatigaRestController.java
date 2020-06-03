@@ -1,6 +1,6 @@
 package com.example.demo.controllers.simptomes;
 
-import com.example.demo.domain.registre_simptomes.Fatiga;
+import com.example.demo.domain.registreSimptomes.Fatiga;
 import com.example.demo.repositories.FatigaRepositori;
 import org.springframework.web.bind.annotation.*;
 

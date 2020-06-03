@@ -1,4 +1,4 @@
-package com.example.demo.domain.registre_simptomes;
+package com.example.demo.domain.registreSimptomes;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,7 +12,7 @@ public class Dolor {
     private String descripcioDolor;
     private String quanApareixDolor;
     private Date data;
-    private String usuari;
+    private Integer usuari;
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -80,11 +80,11 @@ public class Dolor {
     }
 
     @Column(name = "usuari")
-    public String getUsuari() {
+    public int getUsuari() {
         return usuari;
     }
 
-    public void setUsuari(String userId) {
+    public void setUsuari(int userId) {
         this.usuari = userId;
     }
 }

@@ -1,7 +1,5 @@
-package com.example.demo.domain.registre_simptomes;
+package com.example.demo.domain.registreSimptomes;
 
-
-import org.springframework.scripting.groovy.GroovyObjectCustomizer;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,7 +13,7 @@ public class Diarrees {
     private int escalaBristol;
     private int color;
     private Date data;
-    private String usuari;
+    private Integer usuari;
 
 
 
@@ -78,11 +76,11 @@ public class Diarrees {
     }
 
     @Column(name = "usuari")
-    public String getUsuari() {
+    public int getUsuari() {
         return usuari;
     }
 
-    public void setUsuari(String userId) {
+    public void setUsuari(int userId) {
         this.usuari = userId;
     }
 }

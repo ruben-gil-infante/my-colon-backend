@@ -1,4 +1,4 @@
-package com.example.demo.domain.registre_simptomes;
+package com.example.demo.domain.registreSimptomes;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -7,7 +7,7 @@ import java.util.Date;
 public class Vomits {
 
     private int id;
-    private int usuari;
+    private Integer usuari;
     private boolean afirmatiu;
     private int cops;
     private String descripcio;

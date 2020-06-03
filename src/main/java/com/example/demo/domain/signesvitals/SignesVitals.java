@@ -10,7 +10,7 @@ public class SignesVitals {
 
     private int id;
     private Date data;
-    private int usuari;
+    private Integer usuari;
     private int valor;
     private int tipus;
 

@@ -1,6 +1,6 @@
 package com.example.demo.controllers.simptomes;
 
-import com.example.demo.domain.registre_simptomes.Dolor;
+import com.example.demo.domain.registreSimptomes.Dolor;
 import com.example.demo.repositories.DolorRepositori;
 import org.springframework.web.bind.annotation.*;
 

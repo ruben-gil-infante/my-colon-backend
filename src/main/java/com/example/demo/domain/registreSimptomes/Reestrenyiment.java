@@ -1,4 +1,4 @@
-package com.example.demo.domain.registre_simptomes;
+package com.example.demo.domain.registreSimptomes;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,7 +12,7 @@ public class Reestrenyiment {
     private int bristol;
     private int color;
     private Date data;
-    private String usuari;
+    private Integer usuari;
 
     public Reestrenyiment (){}
 
@@ -61,11 +61,11 @@ public class Reestrenyiment {
     }
 
     @Column(name = "usuari")
-    public String getUsuari() {
+    public Integer getUsuari() {
         return usuari;
     }
 
-    public void setUsuari(String userId) {
+    public void setUsuari(Integer userId) {
         this.usuari = userId;
     }
 }

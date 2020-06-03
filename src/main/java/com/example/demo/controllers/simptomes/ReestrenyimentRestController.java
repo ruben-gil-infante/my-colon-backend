@@ -1,6 +1,6 @@
 package com.example.demo.controllers.simptomes;
 
-import com.example.demo.domain.registre_simptomes.Reestrenyiment;
+import com.example.demo.domain.registreSimptomes.Reestrenyiment;
 import com.example.demo.repositories.ReestrenyimentRepositori;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/reestrenyiment")
-public class ReestrenyimentRestController {
+public class    ReestrenyimentRestController {
 
     private ReestrenyimentRepositori reestrenyimentRepositori;
 
