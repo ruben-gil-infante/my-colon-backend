@@ -14,20 +14,6 @@ public class Medicacio {
     private Integer usuari;
     private Date data;
 
-
-    private static final int CAPSULA = 1;
-    private static final int INHALADOR = 2;
-    private static final int UNGUENT = 3;
-    private static final int PEGAT = 4;
-    private static final int GOTES = 5;
-    private static final int INJECCIO = 6;
-    private static final int PASTILLA = 7;
-
-    private static final int FRANJA_MATI = 11;
-    private static final int FRANJA_TARDA = 12;
-    private static final int FRANJA_NIT = 13;
-
-
     public Medicacio (){}
 
     @Id

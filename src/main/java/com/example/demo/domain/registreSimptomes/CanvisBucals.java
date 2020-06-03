@@ -10,7 +10,7 @@ public class CanvisBucals {
     private boolean afirmatiu;
     private String simptomes;
     private Integer usuari;
-    private Date date;
+    private Date data;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,12 +51,12 @@ public class CanvisBucals {
     }
 
     @Column(name = "data")
-    public Date getDate() {
-        return date;
+    public Date getData() {
+        return data;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setData(Date data) {
+        this.data = data;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class CanvisBucals {
                 ", afirmatiu=" + afirmatiu +
                 ", simptomes='" + simptomes + '\'' +
                 ", userId='" + usuari + '\'' +
-                ", date=" + date +
+                ", date=" + data +
                 '}';
     }
 }
