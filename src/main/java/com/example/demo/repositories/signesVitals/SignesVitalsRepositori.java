@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.signesVitals;
 
 import com.example.demo.domain.signesvitals.SignesVitals;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface SignesVitalsRepositori extends JpaRepository<SignesVitals, Integer> {
-    List<SignesVitals> findAllByUsuari(@Param("usuari") Integer usuari);
+    List<SignesVitals> findAllByUsuariOrderByDataDesc(@Param("usuari") Integer usuari);
+    List<SignesVitals> findAllByUsuariOrderByDataAsc(@Param("usuari") Integer usuari);
 }

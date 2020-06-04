@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.registreSimptomes;
 
 import com.example.demo.domain.registreSimptomes.Fatiga;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface FatigaRepositori extends JpaRepository<Fatiga, Integer> {
-    List<Fatiga> findAllByUsuari(@Param("usuari") Integer usuari);
+    List<Fatiga> findAllByUsuariOrderByDataDesc(@Param("usuari") Integer usuari);
 }

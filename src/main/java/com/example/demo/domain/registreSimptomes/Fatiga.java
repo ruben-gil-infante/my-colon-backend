@@ -1,5 +1,7 @@
 package com.example.demo.domain.registreSimptomes;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -40,6 +42,8 @@ public class Fatiga {
         this.puntuacio = puntacio;
     }
 
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "data")
     public Date getData() {
         return data;

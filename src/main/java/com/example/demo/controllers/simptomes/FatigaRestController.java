@@ -1,7 +1,7 @@
 package com.example.demo.controllers.simptomes;
 
 import com.example.demo.domain.registreSimptomes.Fatiga;
-import com.example.demo.repositories.FatigaRepositori;
+import com.example.demo.repositories.registreSimptomes.FatigaRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class FatigaRestController {
 
     @GetMapping("/{usuari}")
     public List<Fatiga> getFatigaByUsuari(@PathVariable Integer usuari){
-        return this.fatigaRepositori.findAllByUsuari(usuari);
+        return this.fatigaRepositori.findAllByUsuariOrderByDataDesc(usuari);
     }
 
     @PostMapping()

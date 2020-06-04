@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.nutricio;
 
 import com.example.demo.domain.nutricio.Nutricio;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface NutricioRepositori extends JpaRepository<Nutricio, Integer> {
-    List<Nutricio> findAllByUsuari(@Param("usuari") Integer usuari);
+    List<Nutricio> findAllByUsuariOrderByDataDesc(@Param("usuari") Integer usuari);
 }

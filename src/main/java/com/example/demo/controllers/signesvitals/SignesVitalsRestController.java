@@ -1,7 +1,7 @@
 package com.example.demo.controllers.signesvitals;
 
 import com.example.demo.domain.signesvitals.SignesVitals;
-import com.example.demo.repositories.SignesVitalsRepositori;
+import com.example.demo.repositories.signesVitals.SignesVitalsRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class SignesVitalsRestController {
 
     @GetMapping("/{usuari}")
     public List<SignesVitals> getAllSignesVitalsByUsuari(@PathVariable Integer usuari){
-        return this.signesVitalsRepositori.findAllByUsuari(usuari);
+        return this.signesVitalsRepositori.findAllByUsuariOrderByDataAsc(usuari);
     }
 
     @PostMapping()

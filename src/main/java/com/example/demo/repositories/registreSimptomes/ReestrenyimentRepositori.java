@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.registreSimptomes;
 
 import com.example.demo.domain.registreSimptomes.Reestrenyiment;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ReestrenyimentRepositori extends JpaRepository<Reestrenyiment, Integer> {
-    List<Reestrenyiment> findAllByUsuari(@Param("usuari") Integer usuari);
+    List<Reestrenyiment> findAllByUsuariOrderByDataDesc(@Param("usuari") Integer usuari);
 }

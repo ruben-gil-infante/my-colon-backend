@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.registreSimptomes;
 
 import com.example.demo.domain.registreSimptomes.Dolor;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface DolorRepositori extends JpaRepository<Dolor, Integer> {
-    List<Dolor> findAllByUsuari(@Param("usuari") Integer usuari);
+    List<Dolor> findAllByUsuariOrderByDataDesc(@Param("usuari") Integer usuari);
 }

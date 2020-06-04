@@ -1,6 +1,7 @@
 package com.example.demo.domain.signesvitals;
 
-import org.springframework.context.annotation.EnableLoadTimeWeaving;
+import com.example.demo.constants.SignesVitalsConstants;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -29,6 +30,8 @@ public class SignesVitals {
         this.id = id;
     }
 
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "data")
     public Date getData() {
         return data;
@@ -64,4 +67,25 @@ public class SignesVitals {
     public void setTipus(int tipus) {
         this.tipus = tipus;
     }
+
+    @Transient
+    public String getUnitat() {
+        switch (tipus) {
+            case SignesVitalsConstants.ACTIVITAT:
+                return "Passos";
+            case SignesVitalsConstants.FREQUENCIA_CARDIACA:
+                return "bpm";
+            case SignesVitalsConstants.TENSIO_ARTERIAL:
+                return "mmHG";
+            case SignesVitalsConstants.GLICEMIES:
+                return "mg/dl";
+            case SignesVitalsConstants.PES:
+                return "Kg";
+            case SignesVitalsConstants.TEMPERATURA:
+                return "ºC";
+        }
+
+        return " ";
+    }
+
 }

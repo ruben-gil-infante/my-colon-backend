@@ -1,7 +1,7 @@
 package com.example.demo.controllers.nota;
 
 import com.example.demo.domain.nota.Nota;
-import com.example.demo.repositories.NotaRepositori;
+import com.example.demo.repositories.nota.NotaRepositori;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

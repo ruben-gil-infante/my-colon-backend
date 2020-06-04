@@ -1,7 +1,7 @@
 package com.example.demo.controllers.security;
 
 import com.example.demo.domain.usuaris.Usuari;
-import com.example.demo.repositories.UsuariRepositori;
+import com.example.demo.repositories.usuaris.UsuariRepositori;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

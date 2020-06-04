@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.domain.usuaris.UserPrincipal;
 import com.example.demo.domain.usuaris.Usuari;
-import com.example.demo.repositories.UsuariRepositori;
+import com.example.demo.repositories.usuaris.UsuariRepositori;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

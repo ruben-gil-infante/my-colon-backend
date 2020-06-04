@@ -1,7 +1,7 @@
 package com.example.demo.controllers.nutricio;
 
 import com.example.demo.domain.nutricio.Nutricio;
-import com.example.demo.repositories.NutricioRepositori;
+import com.example.demo.repositories.nutricio.NutricioRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class NutricioRestController {
 
     @GetMapping("/{usuari}")
     public List<Nutricio> getNutricioByUsuari(@PathVariable Integer usuari){
-        return this.nutricioRepositori.findAllByUsuari(usuari);
+        return this.nutricioRepositori.findAllByUsuariOrderByDataDesc(usuari);
     }
 
     @PostMapping()

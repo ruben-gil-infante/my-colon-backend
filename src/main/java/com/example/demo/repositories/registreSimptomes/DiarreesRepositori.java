@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.registreSimptomes;
 
 import com.example.demo.domain.registreSimptomes.Diarrees;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface DiarreesRepositori extends JpaRepository<Diarrees, Integer> {
-    List<Diarrees> findAllByUsuari(@Param("usuari") Integer usuari);
+    List<Diarrees> findAllByUsuariOrderByDataDesc(@Param("usuari") Integer usuari);
 }

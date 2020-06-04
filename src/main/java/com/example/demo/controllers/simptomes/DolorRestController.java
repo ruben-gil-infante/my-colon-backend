@@ -1,7 +1,7 @@
 package com.example.demo.controllers.simptomes;
 
 import com.example.demo.domain.registreSimptomes.Dolor;
-import com.example.demo.repositories.DolorRepositori;
+import com.example.demo.repositories.registreSimptomes.DolorRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class DolorRestController {
 
     @GetMapping("/{usuari}")
     public List<Dolor> getDolorByUsuari(@PathVariable Integer usuari){
-        return this.dolorRepositori.findAllByUsuari(usuari);
+        return this.dolorRepositori.findAllByUsuariOrderByDataDesc(usuari);
     }
 
     @PostMapping()

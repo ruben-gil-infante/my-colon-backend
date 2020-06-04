@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.comunitat;
 
 import com.example.demo.domain.comunitat.Esdeveniment;
 import org.springframework.data.jpa.repository.JpaRepository;

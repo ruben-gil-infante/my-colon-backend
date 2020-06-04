@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.nota;
 
 import com.example.demo.domain.nota.Nota;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.registreSimptomes;
 
 import com.example.demo.domain.registreSimptomes.Vomits;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface VomitsRepositori extends JpaRepository<Vomits, Integer> {
-    List<Vomits> findAllByUsuari(@Param("usuari") Integer usuari);
+    List<Vomits> findAllByUsuariOrderByDataDesc(@Param("usuari") Integer usuari);
 }

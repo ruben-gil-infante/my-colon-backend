@@ -1,7 +1,7 @@
 package com.example.demo.controllers.simptomes;
 
 import com.example.demo.domain.registreSimptomes.CanvisBucals;
-import com.example.demo.repositories.CanvisBucalsRepositori;
+import com.example.demo.repositories.registreSimptomes.CanvisBucalsRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class CanvisBucalsRestController {
 
     @GetMapping("/{usuari}")
     public List<CanvisBucals> getAllCanvisBucalsByUsuari(@PathVariable Integer usuari){
-        return this.canvisBucalsRepositori.findAllByUsuari(usuari);
+        return this.canvisBucalsRepositori.findAllByUsuariOrderByDataDesc(usuari);
     }
 
     @PostMapping()

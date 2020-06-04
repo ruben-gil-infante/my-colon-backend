@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.repositories.medicacio;
 
 import com.example.demo.domain.medicacio.Medicacio;
 import org.springframework.data.jpa.repository.JpaRepository;

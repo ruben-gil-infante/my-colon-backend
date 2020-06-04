@@ -1,7 +1,7 @@
 package com.example.demo.controllers.simptomes;
 
 import com.example.demo.domain.registreSimptomes.Reestrenyiment;
-import com.example.demo.repositories.ReestrenyimentRepositori;
+import com.example.demo.repositories.registreSimptomes.ReestrenyimentRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class    ReestrenyimentRestController {
 
     @GetMapping("/{usuari}")
     public List<Reestrenyiment> getReestrenyimentByUsuari(@PathVariable Integer usuari){
-        return this.reestrenyimentRepositori.findAllByUsuari(usuari);
+        return this.reestrenyimentRepositori.findAllByUsuariOrderByDataDesc(usuari);
     }
 
     @PostMapping()

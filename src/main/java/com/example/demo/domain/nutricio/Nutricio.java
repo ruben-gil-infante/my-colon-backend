@@ -1,5 +1,7 @@
 package com.example.demo.domain.nutricio;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -83,6 +85,8 @@ public class Nutricio {
         this.gotsAigua = gotsAigua;
     }
 
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "data")
     public Date getData(){return this.data;}
 

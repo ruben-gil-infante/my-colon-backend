@@ -64,7 +64,6 @@ public class Medicacio {
     }
 
     @Column(name = "data")
-
     public Date getData(){return this.data;}
 
     public void setData(Date data){

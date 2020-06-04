@@ -1,6 +1,6 @@
 package com.example.demo.constants;
 
-public class SingesVitalsConstants {
+public class SignesVitalsConstants {
 
     public static final int ACTIVITAT = 1;
     public static final int TENSIO_ARTERIAL = 2;

@@ -1,7 +1,7 @@
 package com.example.demo.controllers.medicacio;
 
 import com.example.demo.domain.medicacio.Medicacio;
-import com.example.demo.repositories.MedicacioRepositori;
+import com.example.demo.repositories.medicacio.MedicacioRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

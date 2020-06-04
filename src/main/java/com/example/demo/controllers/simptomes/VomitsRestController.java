@@ -1,7 +1,7 @@
 package com.example.demo.controllers.simptomes;
 
 import com.example.demo.domain.registreSimptomes.Vomits;
-import com.example.demo.repositories.VomitsRepositori;
+import com.example.demo.repositories.registreSimptomes.VomitsRepositori;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class VomitsRestController {
 
     @GetMapping("/{usuari}")
     public List<Vomits> getVomitsByUsuari(@PathVariable Integer usuari){
-        return this.vomitsRepositori.findAllByUsuari(usuari);
+        return this.vomitsRepositori.findAllByUsuariOrderByDataDesc(usuari);
     }
 
     @PostMapping()
