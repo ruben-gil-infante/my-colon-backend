@@ -3,7 +3,9 @@ package com.example.demo.domain.registreSimptomes;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity(name = "canvis_bucals")
 public class CanvisBucals {
@@ -62,6 +64,7 @@ public class CanvisBucals {
     public void setData(Date data) {
         this.data = data;
     }
+
 
     @Override
     public String toString() {
