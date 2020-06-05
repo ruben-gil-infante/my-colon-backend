@@ -8,7 +8,7 @@ CREATE TABLE usuari(
     segon_cognom            VARCHAR         NOT NULL,
     correu_electronic       VARCHAR         UNIQUE,
     genere                  INT             NOT NULL,
-    edat                    INT             NOT NULL,
+    data_naixement          DATE            NOT NULL,
     password                VARCHAR         NOT NULL
 );
 
@@ -78,7 +78,7 @@ CREATE TABLE reestrenyiment (
     afirmatiu               BOOLEAN     NOT NULL,
     ultim_cop               VARCHAR     NOT NULL,
     color                   INT         NOT NULL,
-    bristol                 INT         NOT NULL,
+    escala_bristol          INT         NOT NULL,
     data                    DATE        DEFAULT CURRENT_TIMESTAMP ,
     usuari                  INT         NOT NULL,
     CONSTRAINT FK_REESTRENYIMENT_USUARI_ID FOREIGN KEY (usuari)

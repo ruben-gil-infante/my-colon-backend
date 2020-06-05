@@ -11,7 +11,7 @@ public class Reestrenyiment {
     private int id;
     private boolean afirmatiu;
     private int ultimCop;
-    private int bristol;
+    private int escalaBristol;
     private int color;
     private Date data;
     private Integer usuari;
@@ -48,10 +48,11 @@ public class Reestrenyiment {
 
     public void setUltimCop(int ultimCop){this.ultimCop = ultimCop;}
 
-    @Column(name = "bristol")
-    public int getBristol(){return this.bristol;}
-
-    public void setBristol(int bristol){this.bristol = bristol;}
+    @Column(name = "escala_bristol")
+    public int getEscalaBristol(){ return this.escalaBristol; }
+    public void setEscalaBristol(int escalaBristol){
+        this.escalaBristol = escalaBristol;
+    }
 
     @Temporal(TemporalType.DATE)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")

@@ -73,7 +73,7 @@ public class Dolor {
     }
 
     @Temporal(TemporalType.DATE)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     @Column(name = "data")
     public Date getData() {
         return data;

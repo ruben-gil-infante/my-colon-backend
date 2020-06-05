@@ -2,6 +2,7 @@ package com.example.demo.domain.usuaris;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "usuari")
 public class Usuari {
@@ -12,7 +13,7 @@ public class Usuari {
     private String segonCognom;
     private String correuElectronic;
     private int genere;
-    private int edat;
+    private Date dataNaixement;
     private String password;
 
     public Usuari (){}
@@ -76,8 +77,8 @@ public class Usuari {
 
     public void setGenere(int genere){this.genere = genere;}
 
-    @Column(name = "edat")
-    public int getEdat(){return this.edat;}
+    @Column(name = "data_naixement")
+    public Date getDataNaixement(){return this.dataNaixement;}
 
-    public void setEdat(int edat){ this.edat = edat; }
+    public void setDataNaixement(Date edat){ this.dataNaixement = edat; }
 }
