@@ -69,7 +69,7 @@ public class Diarrees {
     }
 
     @Temporal(TemporalType.DATE)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-M-/yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-M-yyyy")
     @Column(name = "data")
     public Date getData() {
         return data;
