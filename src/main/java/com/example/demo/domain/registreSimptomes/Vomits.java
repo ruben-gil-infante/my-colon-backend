@@ -80,5 +80,4 @@ public class Vomits {
     public Date getData(){return this.data;}
 
     public void setData(Date data){this.data = data;}
-
 }
