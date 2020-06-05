@@ -87,4 +87,5 @@ public class Diarrees {
     public void setUsuari(int userId) {
         this.usuari = userId;
     }
+
 }

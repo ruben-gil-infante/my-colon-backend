@@ -91,4 +91,5 @@ public class Dolor {
     public void setUsuari(int userId) {
         this.usuari = userId;
     }
+
 }
