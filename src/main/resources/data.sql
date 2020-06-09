@@ -154,6 +154,8 @@ CREATE TABLE esdeveniment (
     descripcio              VARCHAR         NOT NULL
 );
 
+
+
 /* SIGNE VITAL */
 DROP TABLE IF EXISTS signe_vital;
 
