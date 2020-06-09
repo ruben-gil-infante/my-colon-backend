@@ -4349,3 +4349,7 @@ select reestrenyi0_.id as id1_8_, reestrenyi0_.afirmatiu as afirmati2_8_, reestr
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2020-06-09 13:08:54 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ESDEVENIMENT" no encontrada
+Table "ESDEVENIMENT" not found; SQL statement:
+DROP TABLE ESDEVENIMENT [42102-199]

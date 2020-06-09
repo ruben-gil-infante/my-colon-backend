@@ -143,17 +143,16 @@ CREATE TABLE vomits (
     references usuari(id)
 );
 
+/* ESDEVENIMENT */
+DROP TABLE IF EXISTS esdeveniment;
 
-/* EVENT COMUNITAT */
-DROP TABLE IF EXISTS event_comunitat;
-
-CREATE TABLE event_comunitat (
-    id                      SERIAL      PRIMARY KEY,
-    data                    DATE        NOT NULL,
-    numero_telefon          VARCHAR     NOT NULL,
-    descripcio              VARCHAR     NOT NULL
+CREATE TABLE esdeveniment (
+    id                      SERIAL          PRIMARY KEY,
+    data                    DATE            NOT NULL,
+    numero_telefon          VARCHAR         NOT NULL,
+    ubicacio                VARCHAR         NOT NULL,
+    descripcio              VARCHAR         NOT NULL
 );
-
 
 /* SIGNE VITAL */
 DROP TABLE IF EXISTS signe_vital;

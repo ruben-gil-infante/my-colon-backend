@@ -9,6 +9,7 @@ public class Esdeveniment {
     private int id;
     private Date data;
     private String numeroTelefon;
+    private String ubicacio;
     private String descripcio;
 
     public Esdeveniment() {}
@@ -43,5 +44,12 @@ public class Esdeveniment {
 
     public void setDescripcio(String descripcio) {
         this.descripcio = descripcio;
+    }
+
+    @Column(name = "ubicacio")
+    public String getUbicacio(){ return this.ubicacio; }
+
+    public void setUbicacio(String ubicacio){
+        this.ubicacio = ubicacio;
     }
 }
