@@ -22,8 +22,8 @@ public class UsuariRestController {
     }
 
 
-    @GetMapping("/{correuElectronic}/{password}")
-    public Usuari getUsuariById(@PathVariable String correuElectronic, @PathVariable String password){
+    @GetMapping("/{correuElectronic}")
+    public Usuari getUsuariById(@PathVariable String correuElectronic){
         Usuari usuari = usuariRepositori.findByCorreuElectronic(correuElectronic);
 
         if(usuari == null){

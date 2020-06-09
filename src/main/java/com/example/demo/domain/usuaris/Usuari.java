@@ -1,6 +1,8 @@
 package com.example.demo.domain.usuaris;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -77,6 +79,8 @@ public class Usuari {
 
     public void setGenere(int genere){this.genere = genere;}
 
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "data_naixement")
     public Date getDataNaixement(){return this.dataNaixement;}
 

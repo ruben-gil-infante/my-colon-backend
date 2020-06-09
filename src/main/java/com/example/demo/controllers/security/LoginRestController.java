@@ -24,6 +24,7 @@ public class LoginRestController {
     public Map<String, String> login(Principal principal){
         Usuari usuari = this.usuariRepositori.findByCorreuElectronic(principal.getName());
         Map<String, String> infoUsuari = new HashMap<>();
+
         infoUsuari.put("nom", usuari.getNom());
         infoUsuari.put("primerCognom", usuari.getPrimerCognom());
         infoUsuari.put("segonCognom", usuari.getSegonCognom());
