@@ -1,5 +1,7 @@
 package com.example.demo.domain.medicacio;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -63,6 +65,8 @@ public class Medicacio {
         this.usuari = userId;
     }
 
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "data")
     public Date getData(){return this.data;}
 
