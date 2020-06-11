@@ -26,11 +26,6 @@ public class UsuariRestController {
         this.usuariRepositori = usuariRepositori;
     }
 
-    @GetMapping()
-    public List<Usuari> getAll(){
-        return null;
-    }
-
     @GetMapping("/{correuElectronic}")
     public Usuari getUsuariById(@PathVariable String correuElectronic){
         Usuari usuari = usuariRepositori.findByCorreuElectronic(correuElectronic);
