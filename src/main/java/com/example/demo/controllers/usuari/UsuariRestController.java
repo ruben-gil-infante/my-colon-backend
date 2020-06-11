@@ -7,7 +7,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -24,8 +27,22 @@ public class UsuariRestController {
     }
 
     @GetMapping()
-    public String getAllUsuaris(){
-        return "Por que no funciona correctamente";
+    public List<Map<String, String>> getAllUsuaris(){
+        List<Map<String, String>> allUsers = new ArrayList<>();
+
+        for (Usuari usuari : usuariRepositori.findAll()) {
+            Map<String, String> infoUsuari = new HashMap<String, String>();
+            infoUsuari.put("nom", usuari.getNom());
+            infoUsuari.put("primerCognom", usuari.getPrimerCognom());
+            infoUsuari.put("segonCognom", usuari.getSegonCognom());
+            infoUsuari.put("correuElectronic", usuari.getCorreuElectronic());
+            infoUsuari.put("id", String.valueOf(usuari.getId()));
+
+            allUsers.add(infoUsuari);
+        }
+
+        return allUsers;
+
     }
 
     @GetMapping("/{correuElectronic}")
