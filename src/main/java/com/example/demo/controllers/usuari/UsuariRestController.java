@@ -7,6 +7,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/v1/usuari")
@@ -21,6 +23,10 @@ public class UsuariRestController {
         this.usuariRepositori = usuariRepositori;
     }
 
+    @GetMapping()
+    public List<Usuari> getAllUsuaris(){
+        return usuariRepositori.findAll();
+    }
 
     @GetMapping("/{correuElectronic}")
     public Usuari getUsuariById(@PathVariable String correuElectronic){
