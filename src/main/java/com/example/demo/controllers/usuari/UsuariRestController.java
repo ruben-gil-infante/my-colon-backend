@@ -1,5 +1,6 @@
 package com.example.demo.controllers.usuari;
 
+import com.example.demo.controllers.security.LoginRestController;
 import com.example.demo.domain.signesvitals.SignesVitals;
 import com.example.demo.domain.usuaris.Usuari;
 import com.example.demo.repositories.signesVitals.SignesVitalsRepositori;
@@ -21,17 +22,26 @@ import java.util.Map;
 public class UsuariRestController {
 
     private UsuariRepositori usuariRepositori;
-
-    @Autowired
-    private SignesVitalsRepositori signesVitalsRepositori;
+    private LoginRestController loginRestController;
 
     @Bean
     PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder(); }
 
-    public UsuariRestController(UsuariRepositori usuariRepositori){
+    public UsuariRestController(UsuariRepositori usuariRepositori, LoginRestController loginRestController){
         this.usuariRepositori = usuariRepositori;
+        this.loginRestController = loginRestController;
     }
 
+    @GetMapping("")
+    public List<Map<String, String>> getAllUsuaris(){
+        List<Map<String, String>> infoReduidaUsuaris = new ArrayList<>();
+
+        for (Usuari usuari : usuariRepositori.findAll()) {
+            infoReduidaUsuaris.add(loginRestController.mapUsuari(usuari));
+        }
+
+        return infoReduidaUsuaris;
+    }
 
     @GetMapping("/{correuElectronic}")
     public Usuari getUsuariById(@PathVariable String correuElectronic){
