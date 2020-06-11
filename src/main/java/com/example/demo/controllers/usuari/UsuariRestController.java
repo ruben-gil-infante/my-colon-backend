@@ -33,11 +33,6 @@ public class UsuariRestController {
     }
 
 
-    @GetMapping
-    public List<SignesVitals> getAllUsuaris(){
-        return this.signesVitalsRepositori.findAll();
-    }
-
     @GetMapping("/{correuElectronic}")
     public Usuari getUsuariById(@PathVariable String correuElectronic){
         usuariRepositori.findAll();

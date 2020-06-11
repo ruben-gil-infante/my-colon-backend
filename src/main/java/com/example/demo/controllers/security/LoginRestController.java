@@ -28,7 +28,7 @@ public class LoginRestController {
         return this.mapUsuari(usuari);
     }
 
-    private Map<String, String> mapUsuari(Usuari usuari){
+    public Map<String, String> mapUsuari(Usuari usuari){
         Map<String, String> infoUsuari = new HashMap<>();
 
         infoUsuari.put("nom", usuari.getNom());
