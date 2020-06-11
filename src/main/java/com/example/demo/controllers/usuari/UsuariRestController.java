@@ -24,8 +24,8 @@ public class UsuariRestController {
     }
 
     @GetMapping()
-    public List<Usuari> getAllUsuaris(){
-        return usuariRepositori.findAll();
+    public String getAllUsuaris(){
+        return "Por que no funciona correctamente";
     }
 
     @GetMapping("/{correuElectronic}")
