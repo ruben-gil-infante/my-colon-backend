@@ -1,7 +1,10 @@
 package com.example.demo.controllers.usuari;
 
+import com.example.demo.domain.signesvitals.SignesVitals;
 import com.example.demo.domain.usuaris.Usuari;
+import com.example.demo.repositories.signesVitals.SignesVitalsRepositori;
 import com.example.demo.repositories.usuaris.UsuariRepositori;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,11 +22,20 @@ public class UsuariRestController {
 
     private UsuariRepositori usuariRepositori;
 
+    @Autowired
+    private SignesVitalsRepositori signesVitalsRepositori;
+
     @Bean
     PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder(); }
 
     public UsuariRestController(UsuariRepositori usuariRepositori){
         this.usuariRepositori = usuariRepositori;
+    }
+
+
+    @GetMapping
+    public List<SignesVitals> getAllUsuaris(){
+        return this.signesVitalsRepositori.findAll();
     }
 
     @GetMapping("/{correuElectronic}")

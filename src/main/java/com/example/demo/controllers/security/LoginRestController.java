@@ -28,17 +28,6 @@ public class LoginRestController {
         return this.mapUsuari(usuari);
     }
 
-    @GetMapping("/all")
-    public List<Map<String, String>> allUsuaris(Principal principal){
-        List<Map<String, String>> allUsers = new ArrayList<>();
-
-        usuariRepositori.findAll().forEach(usuari -> {
-            allUsers.add(this.mapUsuari(usuari));
-        });
-
-        return allUsers;
-    }
-
     private Map<String, String> mapUsuari(Usuari usuari){
         Map<String, String> infoUsuari = new HashMap<>();
 
