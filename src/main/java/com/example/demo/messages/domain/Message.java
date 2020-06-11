@@ -12,6 +12,7 @@ public class Message {
     private String text;
     private int emisorId;
     private int receptorId;
+    private String codiConversa;
 
 
     public Message(){}
@@ -49,6 +50,13 @@ public class Message {
 
     public void setReceptorId(int receptorId){
         this.receptorId = receptorId;
+    }
+
+    @Column(name = "codi_conversa")
+    public String getCodiConversa(){return this.codiConversa;}
+
+    public void setCodiConversa(String codiConversa){
+        this.codiConversa = codiConversa;
     }
 
 }

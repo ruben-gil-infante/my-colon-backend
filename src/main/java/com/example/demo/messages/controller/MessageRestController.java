@@ -17,9 +17,9 @@ public class MessageRestController {
     }
 
 
-    @GetMapping("/{emisorId}/{receptorId}")
-    public List<Message> getMessagesByReceptorIdAndEmisorId(@PathVariable Integer emisorId, @PathVariable Integer receptorId){
-        return messageRepositori.findAllByEmisorIdAndReceptorIdOrderByMessageIdDesc(emisorId, receptorId);
+    @GetMapping("/{codiConversa}")
+    public List<Message> getMessagesByReceptorIdAndEmisorId(@PathVariable String codiConversa){
+        return this.messageRepositori.findAllByCodiConversaOrderByMessageIdAsc(codiConversa);
     }
 
 

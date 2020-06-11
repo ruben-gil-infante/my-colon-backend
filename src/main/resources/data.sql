@@ -178,6 +178,7 @@ CREATE TABLE message (
     text                VARCHAR         NULL,
     emisor_id           INT             NOT NULL,
     receptor_id         INT             NOT NULL,
+    codi_conversa       VARCHAR         NOT NULL,
 
     constraint FK_EMISOR_ID_USUARI foreign key (emisor_id)
     references usuari(id),

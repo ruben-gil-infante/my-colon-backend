@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface MessageRepositori extends JpaRepository<Message, Integer> {
-    List<Message> findAllByEmisorIdAndReceptorIdOrderByMessageIdDesc
-            (@Param("emisor_id") Integer emisorId, @Param("receptor_id") Integer receptorId);
+    List<Message> findAllByCodiConversaOrderByMessageIdAsc(@Param("codi_conversa") String codiConversa);
+
 }
