@@ -33,7 +33,7 @@ public class MessageRestController {
         return this.messageRepositori.findAllByCodiConversaOrderByMessageIdAsc(codiConversa);
     }
 
-    @GetMapping("/usuaris")
+    @GetMapping("/contactes")
     public List<Map<String, String>> getAllUsuaris(){
         List<Map<String, String>> infoReduidaUsuaris = new ArrayList<>();
 
