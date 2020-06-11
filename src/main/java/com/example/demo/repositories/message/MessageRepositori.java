@@ -1,6 +1,6 @@
-package com.example.demo.messages.repositories;
+package com.example.demo.repositories.message;
 
-import com.example.demo.messages.domain.Message;
+import com.example.demo.domain.message.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

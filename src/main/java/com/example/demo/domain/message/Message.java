@@ -1,4 +1,4 @@
-package com.example.demo.messages.domain;
+package com.example.demo.domain.message;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

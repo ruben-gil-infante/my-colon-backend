@@ -1,10 +1,9 @@
-package com.example.demo.messages.controller;
+package com.example.demo.controllers.message;
 
 import com.example.demo.controllers.security.LoginRestController;
-import com.example.demo.controllers.usuari.UsuariRestController;
 import com.example.demo.domain.usuaris.Usuari;
-import com.example.demo.messages.domain.Message;
-import com.example.demo.messages.repositories.MessageRepositori;
+import com.example.demo.domain.message.Message;
+import com.example.demo.repositories.message.MessageRepositori;
 import com.example.demo.repositories.usuaris.UsuariRepositori;
 import org.springframework.web.bind.annotation.*;
 
