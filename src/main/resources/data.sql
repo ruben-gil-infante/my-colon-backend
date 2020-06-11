@@ -168,3 +168,20 @@ CREATE TABLE signe_vital(
     constraint FK_SIGNE_VITAL_USUARI foreign key (usuari)
     references usuari(id)
 );
+
+
+/* MESSAGE */
+DROP TABLE IF EXISTS message;
+
+CREATE TABLE message (
+    message_id          SERIAL          PRIMARY KEY,
+    text                VARCHAR         NULL,
+    emisor_id           INT             NOT NULL,
+    receptor_id         INT             NOT NULL,
+    codi_conversa       VARCHAR         NOT NULL,
+
+    constraint FK_EMISOR_ID_USUARI foreign key (emisor_id)
+    references usuari(id),
+    constraint FK_RECEPTOR_ID foreign key (receptor_id)
+    references usuari(id)
+);

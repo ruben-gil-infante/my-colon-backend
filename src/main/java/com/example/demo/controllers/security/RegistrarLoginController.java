@@ -18,7 +18,6 @@ public class RegistrarLoginController {
     }
 
 
-    // FIXME: Mostrar errors correctament quan l'usuari no es pot registrar
     @PostMapping()
     public Usuari prova(@RequestBody Usuari usuari){
         if(usuariRepositori.findByCorreuElectronic(usuari.getCorreuElectronic()) != null)

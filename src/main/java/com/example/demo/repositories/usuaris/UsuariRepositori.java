@@ -12,4 +12,5 @@ import java.util.Optional;
 public interface UsuariRepositori extends JpaRepository<Usuari, Integer> {
     Usuari findByCorreuElectronic(@Param("correuElectronic") String correuElectronic);
     Usuari findFirstById(@Param("id") Integer id);
+    List<Usuari> findAll();
 }
