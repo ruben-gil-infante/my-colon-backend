@@ -27,22 +27,8 @@ public class UsuariRestController {
     }
 
     @GetMapping()
-    public List<Map<String, String>> getAllUsuaris(){
-        List<Map<String, String>> allUsers = new ArrayList<>();
-
-        for (Usuari usuari : usuariRepositori.findAll()) {
-            Map<String, String> infoUsuari = new HashMap<String, String>();
-            infoUsuari.put("nom", usuari.getNom());
-            infoUsuari.put("primerCognom", usuari.getPrimerCognom());
-            infoUsuari.put("segonCognom", usuari.getSegonCognom());
-            infoUsuari.put("correuElectronic", usuari.getCorreuElectronic());
-            infoUsuari.put("id", String.valueOf(usuari.getId()));
-
-            allUsers.add(infoUsuari);
-        }
-
-        return allUsers;
-
+    public List<Usuari> getAllUsuaris(){
+        return usuariRepositori.findAll();
     }
 
     @GetMapping("/{correuElectronic}")
