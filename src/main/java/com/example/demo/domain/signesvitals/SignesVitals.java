@@ -13,6 +13,7 @@ public class SignesVitals {
     private Date data;
     private Integer usuari;
     private int valor;
+    private int valorSecundari;
     private int tipus;
 
     public SignesVitals(){
@@ -66,6 +67,15 @@ public class SignesVitals {
 
     public void setTipus(int tipus) {
         this.tipus = tipus;
+    }
+
+    @Column(name = "valor_secundari")
+    public int getValorSecundari (){
+        return this.valorSecundari;
+    }
+
+    public void setValorSecundari(int valorSecundari){
+        this.valorSecundari = valorSecundari;
     }
 
     @Transient

@@ -160,11 +160,12 @@ CREATE TABLE esdeveniment (
 DROP TABLE IF EXISTS signe_vital;
 
 CREATE TABLE signe_vital(
-    id          SERIAL          PRIMARY KEY,
-    data        DATE            NOT NULL,
-    usuari      INT             NOT NULL,
-    valor       INT             NOT NULL,
-    tipus       INT             NOT NULL,
+    id                      SERIAL          PRIMARY KEY,
+    data                    DATE            NOT NULL,
+    usuari                  INT             NOT NULL,
+    valor                   INT             NOT NULL,
+    valor_secundari         INT             DEFAULT -1,
+    tipus                   INT             NOT NULL,
     constraint FK_SIGNE_VITAL_USUARI foreign key (usuari)
     references usuari(id)
 );
