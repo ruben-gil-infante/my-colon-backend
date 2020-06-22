@@ -90,13 +90,13 @@ DROP TABLE IF EXISTS nutricio;
 
 CREATE TABLE nutricio (
     id              SERIAL      PRIMARY KEY,
-    usuari          INT         NOT NULL,
     esmorzar        INT         NOT NULL,
     dinar           INT         NOT NULL,
     berenar         INT         NOT NULL,
     sopar           INT         NOT NULL,
     gots_aigua      INT         NOT NULL,
     data            DATE        DEFAULT CURRENT_TIMESTAMP,
+    usuari          INT         NOT NULL,
     CONSTRAINT FK_NUTRICIO_USUARI   FOREIGN KEY (usuari)
     REFERENCES usuari (id)
 );
@@ -106,12 +106,12 @@ DROP TABLE IF EXISTS medicacio;
 
 CREATE TABLE medicacio (
     id              SERIAL          PRIMARY KEY,
-    usuari          INT             NOT null,
     dosi            VARCHAR         NOT NULL,
     nom             VARCHAR         NOT NULL,
     forma           INT             NOT NULL,
     franja          INT             NOT NULL,
     data            VARCHAR         DEFAULT CURRENT_TIMESTAMP ,
+    usuari          INT             NOT null,
     CONSTRAINT FK_MEDICACIO_USUARI FOREIGN KEY (usuari)
     REFERENCES USUARI (id)
 );
@@ -121,9 +121,9 @@ DROP TABLE IF EXISTS NOTA;
 
 CREATE TABLE nota (
     id                  SERIAL      PRIMARY KEY,
-    usuari              INT         NOT NULL,
     descripcio          VARCHAR     NOT NULL,
     data                DATE        DEFAULT CURRENT_TIMESTAMP ,
+    usuari              INT         NOT NULL,
     CONSTRAINT FK_EVENT_USER   FOREIGN KEY (usuari)
     REFERENCES usuari(id)
 );
@@ -133,12 +133,12 @@ DROP TABLE IF EXISTS vomits;
 
 CREATE TABLE vomits (
     id              SERIAL          PRIMARY KEY,
-    usuari          INT             NOT NULL,
     afirmatiu       BOOLEAN         NOT NULL,
     cops            INT             NOT NULL,
     descripcio      VARCHAR         NOT NULL,
     avui            BOOLEAN         NOT NULL,
     data            DATE            DEFAULT CURRENT_TIMESTAMP,
+    usuari          INT             NOT NULL,
     constraint FK_VOMITS_USUARI foreign key (usuari)
     references usuari(id)
 );
@@ -162,20 +162,20 @@ DROP TABLE IF EXISTS signe_vital;
 CREATE TABLE signe_vital(
     id                      SERIAL          PRIMARY KEY,
     data                    DATE            NOT NULL,
-    usuari                  INT             NOT NULL,
     valor                   INT             NOT NULL,
     valor_secundari         INT             DEFAULT -1,
     tipus                   INT             NOT NULL,
+    usuari                  INT             NOT NULL,
     constraint FK_SIGNE_VITAL_USUARI foreign key (usuari)
     references usuari(id)
 );
 
 
 /* MESSAGE */
-DROP TABLE IF EXISTS message;
+DROP TABLE IF EXISTS missatge;
 
-CREATE TABLE message (
-    message_id          SERIAL          PRIMARY KEY,
+CREATE TABLE missatge (
+    id                  SERIAL          PRIMARY KEY,
     text                VARCHAR         NULL,
     emisor_id           INT             NOT NULL,
     receptor_id         INT             NOT NULL,

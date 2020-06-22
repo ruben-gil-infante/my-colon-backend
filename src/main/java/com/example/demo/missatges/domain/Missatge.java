@@ -1,12 +1,12 @@
-package com.example.demo.messages.domain;
+package com.example.demo.missatges.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name = "message")
-public class Message {
+@Entity(name = "missatge")
+public class Missatge {
 
     private int messageId;
     private String text;
@@ -15,12 +15,12 @@ public class Message {
     private String codiConversa;
 
 
-    public Message(){}
+    public Missatge(){}
 
 
     @Id
     @GeneratedValue
-    @Column(name = "message_id")
+    @Column(name = "id")
     public int getMessageId(){return this.messageId;}
 
     public void setMessageId(int messageId){
