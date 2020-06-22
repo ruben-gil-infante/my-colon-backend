@@ -18,8 +18,17 @@ public class Diarrees {
     private Integer usuari;
 
 
-
     public Diarrees () {}
+
+    public Diarrees(int id, boolean afirmatiu, int vegades, int escalaBristol, int color, Date data, Integer usuari) {
+        this.id = id;
+        this.afirmatiu = afirmatiu;
+        this.vegades = vegades;
+        this.escalaBristol = escalaBristol;
+        this.color = color;
+        this.data = data;
+        this.usuari = usuari;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

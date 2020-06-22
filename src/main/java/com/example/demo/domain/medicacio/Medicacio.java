@@ -18,6 +18,16 @@ public class Medicacio {
 
     public Medicacio (){}
 
+    public Medicacio(int id, String nom, int forma, String dosi, Integer franja, Integer usuari, Date data) {
+        this.id = id;
+        this.nom = nom;
+        this.forma = forma;
+        this.dosi = dosi;
+        this.franja = franja;
+        this.usuari = usuari;
+        this.data = data;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

@@ -20,6 +20,17 @@ public class Usuari {
 
     public Usuari (){}
 
+    public Usuari(int id, String nom, String primerCognom, String segonCognom, String correuElectronic, int genere, Date dataNaixement, String password) {
+        this.id = id;
+        this.nom = nom;
+        this.primerCognom = primerCognom;
+        this.segonCognom = segonCognom;
+        this.correuElectronic = correuElectronic;
+        this.genere = genere;
+        this.dataNaixement = dataNaixement;
+        this.password = password;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

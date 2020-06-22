@@ -16,6 +16,19 @@ public class Dolor {
     private Date data;
     private Integer usuari;
 
+    public Dolor () {}
+
+    public Dolor(int id, boolean afirmatiu, String localitzacio, int valor, String descripcioDolor, String quanApareixDolor, Date data, Integer usuari) {
+        this.id = id;
+        this.afirmatiu = afirmatiu;
+        this.localitzacio = localitzacio;
+        this.valor = valor;
+        this.descripcioDolor = descripcioDolor;
+        this.quanApareixDolor = quanApareixDolor;
+        this.data = data;
+        this.usuari = usuari;
+    }
+
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     @Column(name = "id")

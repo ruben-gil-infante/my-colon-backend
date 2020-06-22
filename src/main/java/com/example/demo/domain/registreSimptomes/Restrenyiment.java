@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "reestrenyiment")
-public class Reestrenyiment {
+@Entity(name = "restrenyiment")
+public class Restrenyiment {
 
     private int id;
     private boolean afirmatiu;
@@ -16,7 +16,17 @@ public class Reestrenyiment {
     private Date data;
     private Integer usuari;
 
-    public Reestrenyiment (){}
+    public Restrenyiment(){}
+
+    public Restrenyiment(int id, boolean afirmatiu, int ultimCop, int escalaBristol, int color, Date data, Integer usuari) {
+        this.id = id;
+        this.afirmatiu = afirmatiu;
+        this.ultimCop = ultimCop;
+        this.escalaBristol = escalaBristol;
+        this.color = color;
+        this.data = data;
+        this.usuari = usuari;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

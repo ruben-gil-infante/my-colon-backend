@@ -61,5 +61,14 @@ public class UsuariRestController {
         usuariRepositori.save(usuari);
     }
 
+    @DeleteMapping("/{correuElectronic}")
+    public Usuari elminarUsuari(@PathVariable String correuElectronic){
+        Usuari usuariAEliminar = usuariRepositori.findByCorreuElectronic(correuElectronic);
+
+        if(usuariAEliminar != null)
+            usuariRepositori.delete(usuariAEliminar);
+
+        return usuariAEliminar;
+    }
 
 }

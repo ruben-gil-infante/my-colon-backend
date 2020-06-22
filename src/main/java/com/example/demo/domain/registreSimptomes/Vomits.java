@@ -18,6 +18,16 @@ public class Vomits {
 
     public Vomits(){}
 
+    public Vomits(int id, Integer usuari, boolean afirmatiu, int cops, String descripcio, boolean avui, Date data) {
+        this.id = id;
+        this.usuari = usuari;
+        this.afirmatiu = afirmatiu;
+        this.cops = cops;
+        this.descripcio = descripcio;
+        this.avui = avui;
+        this.data = data;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

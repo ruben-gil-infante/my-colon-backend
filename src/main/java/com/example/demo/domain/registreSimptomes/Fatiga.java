@@ -13,6 +13,16 @@ public class Fatiga {
     private Date data;
     private int usuari;
 
+    public Fatiga (){}
+
+    public Fatiga(int id, boolean afirmatiu, int puntuacio, Date data, int usuari) {
+        this.id = id;
+        this.afirmatiu = afirmatiu;
+        this.puntuacio = puntuacio;
+        this.data = data;
+        this.usuari = usuari;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

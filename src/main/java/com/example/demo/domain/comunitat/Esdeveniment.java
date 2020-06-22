@@ -16,6 +16,14 @@ public class Esdeveniment {
 
     public Esdeveniment() {}
 
+    public Esdeveniment(int id, Date data, String numeroTelefon, String ubicacio, String descripcio) {
+        this.id = id;
+        this.data = data;
+        this.numeroTelefon = numeroTelefon;
+        this.ubicacio = ubicacio;
+        this.descripcio = descripcio;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

@@ -71,9 +71,9 @@ CREATE TABLE fatiga (
 );
 
 /* REESTRENYIMENT */
-DROP TABLE IF EXISTS reestrenyiment;
+DROP TABLE IF EXISTS restrenyiment;
 
-CREATE TABLE reestrenyiment (
+CREATE TABLE restrenyiment (
     id                      SERIAL      PRIMARY KEY,
     afirmatiu               BOOLEAN     NOT NULL,
     ultim_cop               VARCHAR     NOT NULL,

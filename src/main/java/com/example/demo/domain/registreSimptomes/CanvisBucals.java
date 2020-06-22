@@ -16,6 +16,16 @@ public class CanvisBucals {
     private Integer usuari;
     private Date data;
 
+    public CanvisBucals(){}
+
+    public CanvisBucals(int id, boolean afirmatiu, String simptomes, Integer usuari, Date data) {
+        this.id = id;
+        this.afirmatiu = afirmatiu;
+        this.simptomes = simptomes;
+        this.usuari = usuari;
+        this.data = data;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

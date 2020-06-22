@@ -13,8 +13,14 @@ public class Nota {
     private Date data;
     private String descripcio;
 
-
     public Nota(){}
+
+    public Nota(int id, int usuari, Date data, String descripcio) {
+        this.id = id;
+        this.usuari = usuari;
+        this.data = data;
+        this.descripcio = descripcio;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

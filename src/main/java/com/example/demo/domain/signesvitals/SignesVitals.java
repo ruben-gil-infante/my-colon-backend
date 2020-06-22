@@ -17,7 +17,15 @@ public class SignesVitals {
     private int tipus;
 
     public SignesVitals(){
+    }
 
+    public SignesVitals(int id, Date data, Integer usuari, int valor, int valorSecundari, int tipus) {
+        this.id = id;
+        this.data = data;
+        this.usuari = usuari;
+        this.valor = valor;
+        this.valorSecundari = valorSecundari;
+        this.tipus = tipus;
     }
 
     @Id

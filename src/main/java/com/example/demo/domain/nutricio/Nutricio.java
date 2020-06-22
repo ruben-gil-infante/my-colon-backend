@@ -20,6 +20,17 @@ public class Nutricio {
 
     public Nutricio(){}
 
+    public Nutricio(int id, int usuari, int esmorzar, int dinar, int berenar, int sopar, int gotsAigua, Date data) {
+        this.id = id;
+        this.usuari = usuari;
+        this.esmorzar = esmorzar;
+        this.dinar = dinar;
+        this.berenar = berenar;
+        this.sopar = sopar;
+        this.gotsAigua = gotsAigua;
+        this.data = data;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
