@@ -14,6 +14,7 @@ _Cal tenir instal·lat el següent:_
 
 * [Java 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 * [Spring Framework](https://spring.io/)
+* [Spring Boot](https://spring.io/projects/spring-boot)
 
 ## Desplegament 📦
 
