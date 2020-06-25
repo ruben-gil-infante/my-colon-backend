@@ -36,3 +36,9 @@ _Aplicació desplegada també a Heroku_
 
 * **Rubén Gil** - [rgili](https://github.com/rgili)
 
+## Altres 😺
+Conté una base de dades amb dos usuaris registrats per tal de facilitar les proves
+
+* Usuari (correu electrònic: usuari@usuari.com, contrasenya: usuari)
+* Usuari 2 (correu electrònic: metge@metge.com, contrasenya: metge)
+
