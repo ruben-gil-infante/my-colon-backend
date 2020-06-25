@@ -22,6 +22,8 @@ _Per realitzar el desplegament cal executar la següent comanda_
 ```
 mvn spring-boot:run
 ```
+_Aplicació desplegada també a Heroku_ 
+* [Desplegament a Heroku](https://my-colon-server.herokuapp.com/)
 
 ## Construït amb 🛠️
 
