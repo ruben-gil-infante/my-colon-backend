@@ -42,3 +42,67 @@ Conté una base de dades amb dos usuaris registrats per tal de facilitar les pro
 * Usuari (correu electrònic: usuari@usuari.com, contrasenya: usuari)
 * Usuari 2 (correu electrònic: metge@metge.com, contrasenya: metge)
 
+A l'arxiu application.properties:
+
+Per utilitzar la base de dades H2
+```
+# H2 database settings
+spring.datasource.url=jdbc:h2:mem:./data
+spring.datasource.driverClassName=org.h2.Driver
+spring.h2.console.settings.web-allow-others=true
+
+# Hibernate database settings
+# spring.jpa.hibernate.ddl-auto=none
+# spring.datasource.url=jdbc:h2:file:./database;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+
+
+# Hibernate dialect
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+
+# Datasource user settings
+spring.h2.console.enabled=true
+spring.datasource.platform=none
+spring.datasource.username=sa
+# spring.datasource.password=password
+
+# Avoid problems duplicating the password encoder bean
+spring.main.allow-bean-definition-overriding=true
+
+
+server.port=8080
+
+
+spring.application.name=myColonServer
+```
+Per utilitzar la base de dades postgress:
+```
+# H2 database settings
+# spring.datasource.url=jdbc:h2:mem:./data
+# spring.datasource.driverClassName=org.h2.Driver
+# spring.h2.console.settings.web-allow-others=true
+
+# Hibernate database settings
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.url=jdbc:h2:file:./database;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+
+
+# Hibernate dialect
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+
+# Datasource user settings
+spring.h2.console.enabled=true
+spring.datasource.platform=none
+spring.datasource.username=sa
+# spring.datasource.password=password
+
+# Avoid problems duplicating the password encoder bean
+spring.main.allow-bean-definition-overriding=true
+
+
+server.port=8080
+
+
+spring.application.name=myColonServer
+```
