@@ -2,6 +2,7 @@ package com.example.demo.controllers.security;
 
 import com.example.demo.domain.usuaris.Usuari;
 import com.example.demo.repositories.usuaris.UsuariRepositori;
+import com.example.demo.utils.Utils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,27 +18,19 @@ import java.util.Map;
 public class LoginRestController {
 
     private UsuariRepositori usuariRepositori;
+    private Utils utils;
 
     public LoginRestController(UsuariRepositori usuariRepositori){
         this.usuariRepositori = usuariRepositori;
+        this.utils = new Utils();
     }
 
     @GetMapping
     public Map<String, String> login(Principal principal){
         Usuari usuari = this.usuariRepositori.findByCorreuElectronic(principal.getName());
-        return this.mapUsuari(usuari);
+        return this.utils.mapUsuari(usuari);
     }
 
-    public Map<String, String> mapUsuari(Usuari usuari){
-        Map<String, String> infoUsuari = new HashMap<>();
 
-        infoUsuari.put("nom", usuari.getNom());
-        infoUsuari.put("primerCognom", usuari.getPrimerCognom());
-        infoUsuari.put("segonCognom", usuari.getSegonCognom());
-        infoUsuari.put("correuElectronic", usuari.getCorreuElectronic());
-        infoUsuari.put("id", String.valueOf(usuari.getId()));
-
-        return infoUsuari;
-    }
 
 }
