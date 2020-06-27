@@ -18,7 +18,7 @@ _Cal tenir instal·lat el següent:_
 
 ## Desplegament 📦
 
-_Per realitzar el desplegament cal executar la següent comanda_
+_Per realitzar el desplegament des de la terminal cal executar la següent comanda_
 ```
 mvn spring-boot:run
 ```
@@ -41,6 +41,8 @@ Conté una base de dades amb dos usuaris registrats per tal de facilitar les pro
 
 * Usuari (correu electrònic: usuari@usuari.com, contrasenya: usuari)
 * Usuari 2 (correu electrònic: metge@metge.com, contrasenya: metge)
+
+Per accedir a la base de dades cal entrar a la següent url: http://localhost:8080/h2-console
 
 A l'arxiu application.properties:
 
