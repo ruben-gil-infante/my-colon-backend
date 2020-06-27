@@ -36,6 +36,9 @@ public class Config extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/api/v1/registrar");
         web.ignoring().antMatchers("/api/v1/esdeveniments");
+
+        // per fer proves
+        web.ignoring().antMatchers("/h2-console/**");
     }
 
     @Override
