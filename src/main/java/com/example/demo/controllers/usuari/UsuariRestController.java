@@ -38,24 +38,25 @@ public class UsuariRestController {
     @GetMapping("")
     public List<Map<String, String>> getAllUsuaris(){
         List<Map<String, String>> infoReduidaUsuaris = new ArrayList<>();
+        for(Usuari usuari : usuariRepositori.findAll()){
+            infoReduidaUsuaris.add(this.utils.mapUsuari(usuari));
+        }
 
-        for (Usuari usuari : usuariRepositori.findAllBySanitari(false)) {
+        return infoReduidaUsuaris;
+    }
+
+    @GetMapping("/sanitari/{sanitari}")
+    public List<Map<String, String>> getAllUsuarisBySanitari(@PathVariable boolean sanitari){
+        List<Map<String, String>> infoReduidaUsuaris = new ArrayList<>();
+
+        for (Usuari usuari : usuariRepositori.findAllBySanitari(!sanitari)) {
+
             infoReduidaUsuaris.add(utils.mapUsuari(usuari));
         }
 
         return infoReduidaUsuaris;
     }
 
-    @GetMapping("/sanitari")
-    public List<Map<String, String>> getAllSanitaris(){
-        List<Map<String, String>> infoReduidaSanitaris = new ArrayList<>();
-
-        for(Usuari usuari : usuariRepositori.findAllBySanitari(true)){
-            infoReduidaSanitaris.add(utils.mapUsuari(usuari));
-        }
-
-        return infoReduidaSanitaris;
-    }
 
     @GetMapping("/{correuElectronic}")
     public Usuari getUsuariById(@PathVariable String correuElectronic){
