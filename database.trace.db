@@ -22503,3 +22503,7 @@ UPDATE TABLE USUARI SET SANITARI = TRUE WHERE ID = 1720 [42001-199]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "SANITARI" no encontrada
 Table "SANITARI" not found; SQL statement:
 SELECT * FROM SANITARI [42102-199]
+2020-06-27 18:30:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "Usuari"
+Data conversion error converting "Usuari"; SQL statement:
+DELETE FROM USUARI WHERE SANITARI = FALSE AND ID NOT IN ('Usuari') [22018-199]
