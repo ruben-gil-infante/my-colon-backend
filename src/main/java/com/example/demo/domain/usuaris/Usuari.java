@@ -15,12 +15,13 @@ public class Usuari {
     private String segonCognom;
     private String correuElectronic;
     private int genere;
+    private boolean sanitari;
     private Date dataNaixement;
     private String password;
 
     public Usuari (){}
 
-    public Usuari(int id, String nom, String primerCognom, String segonCognom, String correuElectronic, int genere, Date dataNaixement, String password) {
+    public Usuari(int id, String nom, String primerCognom, String segonCognom, String correuElectronic, int genere, Date dataNaixement, String password, boolean sanitari) {
         this.id = id;
         this.nom = nom;
         this.primerCognom = primerCognom;
@@ -29,6 +30,7 @@ public class Usuari {
         this.genere = genere;
         this.dataNaixement = dataNaixement;
         this.password = password;
+        this.sanitari = sanitari;
     }
 
     @Id
@@ -89,6 +91,13 @@ public class Usuari {
     public int getGenere(){return this.genere;}
 
     public void setGenere(int genere){this.genere = genere;}
+
+    @Column(name = "sanitari")
+    public boolean getSanitari(){return this.sanitari;}
+
+    public void setSanitari(boolean sanitari){
+        this.sanitari = sanitari;
+    }
 
     @Temporal(TemporalType.DATE)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")

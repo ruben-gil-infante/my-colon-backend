@@ -9,6 +9,7 @@
         correu_electronic       VARCHAR         UNIQUE,
         genere                  INT             NOT NULL,
         data_naixement          DATE            NOT NULL,
+        sanitari                BOOLEAN         NOT NULL DEFAULT FALSE,
         password                VARCHAR         NOT NULL
     );
 
