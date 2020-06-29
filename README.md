@@ -108,3 +108,5 @@ server.port=8080
 
 spring.application.name=myColonServer
 ```
+
+_Fron-end de l'apliació en aquest [repositori](https://github.com/rgili/my-colon-frontend)_
