@@ -29,8 +29,6 @@ _Aplicació desplegada també a Heroku_
 
 * [Java 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 * [Spring Framework](https://spring.io/)
-* [Spring Boot](https://spring.io/projects/spring-boot)
-
 
 ## Autor ✒️
 
@@ -77,7 +75,7 @@ server.port=8080
 
 spring.application.name=myColonServer
 ```
-Per utilitzar la base de dades postgress:
+Per utilitzar la base de dades hibernate:
 ```
 # H2 database settings
 # spring.datasource.url=jdbc:h2:mem:./data
@@ -108,5 +106,5 @@ server.port=8080
 
 spring.application.name=myColonServer
 ```
-
-_Fron-end de l'apliació en aquest [repositori](https://github.com/rgili/my-colon-frontend)_
+## Codi del frontend
+_Frontend de l'apliació en aquest [repositori](https://github.com/rgili/my-colon-frontend)_
